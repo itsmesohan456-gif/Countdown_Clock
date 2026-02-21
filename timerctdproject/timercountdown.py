@@ -23,6 +23,6 @@ def ctd_timer(seconds):
 
     try:
         user_time = int("Enter the time in seconds (e.g. 10 or 60 etc.):")
-        ctd_timer(int(user_input))
+        ctd_timer(user_time)
     except ValueError:
         print("Error! Please enter a valid whole number.")
