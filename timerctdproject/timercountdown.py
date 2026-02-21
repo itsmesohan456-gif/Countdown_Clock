@@ -21,8 +21,13 @@ def ctd_timer(seconds):
     else:
         print('\a') # For Mac/Linux
 
-    try:
-        user_time = int("Enter the time in seconds (e.g. 10 or 60 etc.):")
-        ctd_timer(user_time)
-    except ValueError:
-        print("Error! Please enter a valid whole number.")
+try:
+    raw_input = input("Enter the time in seconds:")
+
+    user_time = int(raw_input)
+
+    ctd_timer(user_time)
+
+except Exception as e:
+    
+    print("Error! The program could not run because of {e}")
