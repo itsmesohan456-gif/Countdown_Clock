@@ -14,3 +14,15 @@ def ctd_timer(seconds):
         seconds -= 1
 
     print("\nTIME'S UP!")
+
+    if os.name == 'nt': # For Windows
+        import winsound
+        winsound.Beep(1000, 1000) # Frequency 1000 Hz, Duration 1000ms
+    else:
+        print('\a') # For Mac/Linux
+
+    try:
+        user_time = int("Enter the time in seconds (e.g. 10 or 60 etc.):")
+        ctd_timer(int(user_input))
+    except ValueError:
+        print("Error! Please enter a valid whole number.")
